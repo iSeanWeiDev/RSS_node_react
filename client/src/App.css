@@ -1,0 +1,250 @@
+@import url(~bootstrap/dist/css/bootstrap.css);
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.App .topbar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  width: 100vw;
+  background: #ffffff;
+  padding: 20px, 30px;
+  border-bottom: 1px solid #499629;
+}
+
+.App .content {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+.App .content .sidebar li:hover {
+  opacity: 0.7;
+}
+
+.App .content .sidebar .close {
+  height: 30px;
+  width: 100%;
+}
+
+.App .content .mainbar.loading-open {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 769px) {
+  .App .topbar.desktop {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    visibility: visible;
+  }
+
+  .App .topbar {
+    height: 70px;
+  }
+  
+  .App .content {
+    height: calc(100% - 70px);
+    top: 70px;
+  }
+
+  .App .topbar.mobile {
+    display: none;
+  }
+
+  .App .topbar .Top-Right-Menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  .Top-Right-Menu .Login-Text {
+    color: #499629;
+    font-size: 12px;
+    font-family: 'Avenir Next';
+    font-weight: bold;
+  }
+
+  .Top-Right-Menu .MuiFab-root {
+    text-transform: none !important;
+  }
+
+  .Top-Right-Menu .MuiFab-root:hover {
+    opacity: 0.7;
+  }
+
+  .Top-Right-Menu .MuiFab-label {
+    font-size: 12px;
+    background: #499629;
+  }
+
+  .Top-Right-Menu .MuiFab-extended {
+    background: #499629 !important;
+    height: 30px !important;
+  }
+
+  .Top-Right-Menu .MuiFab-label {
+    font-family: 'Avenir Next' !important;
+    color: #ffffff;
+  }
+
+  .App .content .sidebar {
+    border-right: 1px solid #499629;
+    position: fixed;
+    width: 260px;
+    height: 100vh;
+    visibility: visible;
+    padding-top: 20px;
+  }
+  
+  .App .content .sidebar li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .App .content .navbar-nav .nav-link.no-active {
+    pointer-events: none; 
+    cursor: default; 
+  }
+
+  .App .content .mainbar {
+    position: absolute;
+    left: 260px;
+    width: calc(100% - 260px);
+    height: 100%;
+    overflow: auto;
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App .topbar {
+    height: 50px;
+  }
+
+  .App .content {
+    height: calc(100% - 50px);
+    top: 50px;
+    padding-top: 20px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .App .topbar.desktop {
+    padding: 0;
+    display: none;
+  }
+
+  .App .topbar.mobile {
+    padding: 10px;
+    visibility: visible;
+  }
+
+  .App .content .mainbar.contentBarOpen {
+    visibility: hidden;
+  }
+
+  .App .content .mainbar .contentbar{
+    height: 100%;
+    width: 100%;
+    padding-top: 50px;
+    overflow: auto;
+  }
+
+  .App .content .sidebar {
+    position: fixed;
+    visibility: hidden;
+  }
+
+  .App .content .sidebar.rightBarOpen {
+    padding-right: 10px;
+    position: fixed;
+    visibility: visible;
+  }
+
+  .App .content .sidebar .feedurl {
+    padding-top: 10px;
+    border-left: 1px solid #979797;
+  }
+
+  .App .content .rightBarOpen {
+    visibility: visible;
+    right: 0;
+  }
+
+  .App .content .mainbar {
+    width: 100%;
+    height: 100%;
+  }
+
+  .App .content .mainbar .contentBarOpen {
+    visibility: hidden;
+  }
+
+  .App .content .sidebar .close {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+    height: 30px;
+    width: 100%;
+    border-left: 2px solid #979797;
+  }
+  
+  .App .content .sidebar .feedurl {
+    margin-top: 30px;
+  }
+
+  .nav-link .Login-Text {
+    color: #499629;
+    font-size: 12px;
+    font-family: 'Avenir Next';
+    font-weight: bold;
+  }
+
+  .nav-link .MuiFab-root {
+    text-transform: none !important;
+  }
+
+  .nav-link .MuiFab-root:hover {
+    opacity: 0.7;
+  }
+
+  .nav-link .MuiFab-label {
+    font-size: 12px;
+    background: #499629;
+  }
+
+  .nav-link .MuiFab-extended {
+    background: #499629 !important;
+    height: 30px !important;
+  }
+
+  .nav-link .MuiFab-label {
+    font-family: 'Avenir Next' !important;
+    color: #ffffff;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
