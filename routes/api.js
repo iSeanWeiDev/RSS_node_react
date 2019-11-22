@@ -13,7 +13,6 @@ const metascraper = require('metascraper')([
 ]);
 
 const got = require('got');
-const RSS = require('rss');
 let Parser = require('rss-parser');
 let parser = new Parser();
 
@@ -138,22 +137,6 @@ router.post('/feeds/all.rss', (req, res) => {
       })
     });
 });
-router.get('/feeds/all.rss', (req, res) => {
-  DataModel.findAll({
-    order: [
-      ['id', 'DESC'],
-    ],
-    limit: 100
-  })
-    .then(result => {
-      var feed = new RSS();
 
-      for (var obj of result) {
-        feed.item(obj.get());
-      }
-     
-      res.send(feed.xml());
-    });
-});
 
 module.exports = router;
