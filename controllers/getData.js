@@ -139,7 +139,14 @@ process.on('message', msg => {
         
         var resultData = onlyInNew.concat(onlyInOld);
 
-        DataModel.bulkCreate(resultData)
+        var newFeedData = [];
+        for (var obj of resultData) {
+          if (obj.logo != null) {
+            newFeedData.push(obj);
+          }
+        }
+
+        DataModel.bulkCreate(newFeedData)
           .then(createdData => {
             if (createdData.length > 0) {
               var query = `SELECT id, count(*) AS counter FROM data GROUP BY description, image HAVING counter > 1`;
@@ -176,6 +183,7 @@ process.on('message', msg => {
         oldData = [];
         oldData = newData;
         newData = [];
+        newFeedData = [];
       }, 20000);
     });
   }, process.env.FEED_REFRESH_TIME);

@@ -114,26 +114,26 @@ class FeedWidget extends Component {
         })
 
         try {
-          let index = 0;
+          // let index = 0;
           this.props.onStateChange("no-active");
-          for (var i = 0; i < feedList.length; i++) {
-            axios.post('/api/feed/' + feedurl[i].version, { url: feedList[i] })
+          // for (var i = 0; i < feedList.length; i++) {
+            axios.post('/api/feeds/all.rss',)
               .then(({ data: { data: feedData } }) => {
-                index++;
+                // index++;
                 let { data } = this.state;
                 data = [...data, ...feedData];
                 this.setState({
                   pending: false,
                   data
                 })
-                if (index === feedList.length) {
+                // if (index === feedList.length) {
                   this.props.onStateChange("active");
-                }
+                // }
               })
               .catch(err => {
                 console.log(err)
               })
-          }
+          // }
         } catch (error) {
           console.log("error", error)
         }
