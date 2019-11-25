@@ -2,8 +2,8 @@
   "development": {
     "username": "root",
     "password": "Rango941001top!@#",
-    "database": "weedfeed",
-    "host": "127.0.0.1",
+    "database": "weekfeed",
+    "host": "192.168.1.196",
     "dialect": "mysql",
     "operatorsAliases": false
   },
