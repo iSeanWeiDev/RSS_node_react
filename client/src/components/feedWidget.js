@@ -107,11 +107,11 @@ class FeedWidget extends Component {
     if (newCount >= 0) {
       this.setState({ currentCount: newCount });
     } else {
-      const { feedurl, main } = this.props;
+      const { main } = this.props;
       if (main) {
-        const feedList = feedurl.map((url) => {
-          return url.url;
-        })
+        // const feedList = feedurl.map((url) => {
+        //   return url.url;
+        // })
 
         try {
           // let index = 0;
