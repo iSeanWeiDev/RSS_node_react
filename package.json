@@ -16,7 +16,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "child_process": "^1.0.2",
-    "concurrently": "^4.1.2",
+    "concurrently": "^8.2.0",
     "cors": "^2.8.5",
     "domino": "^2.1.3",
     "dotenv": "^8.2.0",
@@ -38,7 +38,7 @@
     "page-metadata-parser": "^1.1.4",
     "rss": "^1.2.2",
     "rss-parser": "^3.7.2",
-    "sequelize": "^5.21.2"
+    "sequelize": "^6.32.1"
   },
   "proxy": "http://localhost:5000",
   "devDependencies": {},
